@@ -83,7 +83,7 @@ class Person {
 class Car {
   constructor(model,milesPerGallon) {
   this.model = model,
-  this.milesPerGallon = milesPerGallon 
+  this.milesPerGallon = milesPerGallon, 
   this.tank = 0,
   this.odometer = 0;
   }
@@ -93,20 +93,27 @@ class Car {
   }
 
   drive(distance) {
-    if(this.tank > 0) {
-      // While loop?
-    }
-    this.odometer += distance;
-    this.tank -+ distance;
-    if(this.tank === 0) {
-      return `I ran out of fuel at ${this.odometer} miles!`;
-    }
+  let Mpg = distance / this.milesPerGallon
+  this.odometer += distance;
+  this.tank -= Mpg;
+  if(this.tank === 0) {
+    return `I ran out of fuel at ${this.odometer} miles!`
   }
-
-
-
-
+ 
+    
+    // if(this.tank > 0){
+    // this.tank - this.milesPerGallon
+    // distance = this.milesPerGallon/this.tank
+    // } else {
+    //   return `I ran out of fuel at ${this.odometer} miles!`
+    // }
+  }
 }
+
+// drive(distance){
+//   this.odometer += distance;
+//   this.tank = distance/this.milesPerGallon -= this.tank;
+// }
 
 /*
   TASK 3
@@ -189,7 +196,7 @@ class Student extends Lambdasian {
   }
 
   listSubjects() {
-    return "Loving HTML, CSS, Node, Redux, JS!";
+    return `${this.favSubjects}`;
   }
 
   PRAssignment (subject) {
@@ -199,9 +206,6 @@ class Student extends Lambdasian {
   sprintChallenge (subject) {
     return `${this.name} has begun spring challenge on ${subject}`;
   }
-
-
-
 }
 
 /*
