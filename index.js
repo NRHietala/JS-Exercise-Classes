@@ -159,8 +159,8 @@ class Instructor extends Lambdasian {
     return `Today we are learning about ${subject}`
   }
 
-  grade(student, subject) {
-    return `${student} receives a perfect score on ${subject}`
+  grade(obj, subject) {
+    return `${obj.name} receives a perfect score on ${subject}`;
   }
 
 }
@@ -224,7 +224,14 @@ class ProjectManager extends Instructor {
     this.favInstructor = obj.favInstructor
   }
 
-  
+  standUp(slack) {
+    return `${this.name} announces to ${slack}, @channel standy times!`;
+  }
+
+  debugsCode (obj, subject) {
+    return `${this.name} debugs ${obj.name}'s code on ${subject}`
+  }
+
 
 }
 
