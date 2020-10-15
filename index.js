@@ -93,9 +93,9 @@ class Car {
   }
 
   drive(distance) {
-    if(this.tank >= (distance/this.milesPerGallon)) {
+    if(this.tank >= distance / this.milesPerGallon) {
       this.odometer += distance;
-      this.tank -= distance/this.milesPerGallon;
+      this.tank -= distance / this.milesPerGallon;
     } else {
       this.odometer += this.tank * this.milesPerGallon;
       this.tank = 0;
